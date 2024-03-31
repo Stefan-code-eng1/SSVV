@@ -40,7 +40,8 @@ public class ServiceTest {
 
     @Test
     public void testSaveStudent_Success() {
-        assertEquals(1, 1);
+        int result = service.saveStudent("4", "John Doe", 225);
+        assertEquals(1, result);
     }
 
     @Test
