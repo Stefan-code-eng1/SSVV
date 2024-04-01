@@ -40,12 +40,14 @@ public class ServiceTest {
 
     @Test
     public void testSaveStudent_Success() {
+        setUp();
         int result = service.saveStudent("4", "John Doe", 225);
         assertEquals(1, result);
     }
 
     @Test
     public void testSaveStudent_Failure() {
+        setUp();
         int result = service.saveStudent("5", "Jane Doe", 109);
         assertEquals(1, result);
     }
