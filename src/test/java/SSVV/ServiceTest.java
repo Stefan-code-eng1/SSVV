@@ -55,14 +55,14 @@ public class ServiceTest {
     @Test
     public void testSaveStudent_Success1() {
         setUp();
-        int result = service.saveStudent("4", "John Doe", 110);
+        int result = service.saveStudent("6", "John Doe", 110);
         assertEquals(1, result);
     }
 
     @Test
     public void testSaveStudent_Success2() {
         setUp();
-        int result = service.saveStudent("5", "Jane Doe", 111);
+        int result = service.saveStudent("7", "Jane Doe", 111);
         assertEquals(1, result);
     }
 
@@ -70,14 +70,14 @@ public class ServiceTest {
     @Test
     public void testSaveStudent_Success3() {
         setUp();
-        int result = service.saveStudent("4", "John Doe", 225);
+        int result = service.saveStudent("8", "John Doe", 225);
         assertEquals(1, result);
     }
 
     @Test
     public void testSaveStudent_Success4() {
         setUp();
-        int result = service.saveStudent("5", "Jane Doe", 937);
+        int result = service.saveStudent("9", "Jane Doe", 937);
         assertEquals(1, result);
     }
 
@@ -85,14 +85,14 @@ public class ServiceTest {
     @Test
     public void testSaveStudent_Success5() {
         setUp();
-        int result = service.saveStudent("4", "John Doe", 938);
+        int result = service.saveStudent("10", "John Doe", 938);
         assertEquals(1, result);
     }
 
     @Test
     public void testSaveStudent_Failure3() {
         setUp();
-        int result = service.saveStudent("5", "Jane Doe", 939);
+        int result = service.saveStudent("11", "Jane Doe", 939);
         assertEquals(1, result);
     }
 
@@ -100,7 +100,7 @@ public class ServiceTest {
     @Test
     public void testSaveStudent_Failure4() {
         setUp();
-        int result = service.saveStudent("4", "John Doe", 999);
+        int result = service.saveStudent("12", "John Doe", 999);
         assertEquals(1, result);
     }
 
