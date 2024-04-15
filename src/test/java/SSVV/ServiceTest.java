@@ -107,12 +107,12 @@ public class ServiceTest {
 
 
 //WHITE-BOX TESTING------------------------------------------------------------------------------------------------
-@Test
-public void testSaveTema_ValidInput() {
-    setUp();
-    int result = service.saveTema("4", "descriere", 10, 5);
-    assertEquals(1, result);
-}
+    @Test
+    public void testSaveTema_ValidInput() {
+        setUp();
+        int result = service.saveTema("4", "descriere", 10, 5);
+        assertEquals(1, result);
+    }
 
     @Test
     public void testSaveTema_NullId() {
@@ -155,16 +155,12 @@ public void testSaveTema_ValidInput() {
         TemaXMLRepository temaXmlRepo = mock(TemaXMLRepository.class);
         when(temaXmlRepo.save(any())).thenReturn(new Tema("5", "descriere", 10, 5));
 
-        // Create TemaService instance with mocked dependency
         Service service = new Service(null,temaXmlRepo,null);
 
-        // Call saveTema method
         int result = service.saveTema("5", "descriere", 10, 5);
 
-        // Verify that save method of temaXmlRepo is called once
         verify(temaXmlRepo, times(1)).save(any());
 
-        // Assert that the method returns 0, indicating successful save
         assertEquals(0, result);
     }
 
@@ -173,16 +169,12 @@ public void testSaveTema_ValidInput() {
         TemaXMLRepository temaXmlRepo = mock(TemaXMLRepository.class);
         when(temaXmlRepo.save(any())).thenReturn(null);
 
-        // Create TemaService instance with mocked dependency
         Service service = new Service(null,temaXmlRepo,null);
 
-        // Call saveTema method
         int result = service.saveTema("5", "descriere", 10, 5);
 
-        // Verify that save method of temaXmlRepo is called once
         verify(temaXmlRepo, times(1)).save(any());
 
-        // Assert that the method returns 1, indicating unsuccessful save
         assertEquals(1, result);
     }
 
